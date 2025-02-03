@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas - Delhi Dreams</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .reservation-section {
+        padding: 20px;
+        text-align: center;
+      }
+      .reservation-section h2 {
+        color: #cba46c;
+      }
+      .reservation-form {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .reservation-form label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      .reservation-form input,
+      .reservation-form select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #cba46c;
+        border-radius: 5px;
+        background-color: #333334;
+        color: #ffffff;
+      }
+      .reservation-form button {
+        background-color: #cba46c;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .reservation-form button:hover {
+        background-color: #b8935a;
+      }
+      footer {
+        background-color: #222223;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      footer a {
+        color: #cba46c;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="a-selected">Home</a>
+      <a href="menu.html">Carta</a>
+      <a href="contactanos.html">Contactanos</a>
+      <a href="#" class="button">Reservar ahora</a>
+    </nav>
+    <section class="reservation-section">
+      <h2>Reserva</h2>
+      <form class="reservation-form">
+        <label for="comensales">Número de comensales:</label>
+        <input
+          type="number"
+          id="comensales"
+          name="comensales"
+          min="1"
+          required
+        />
+
+        <label for="hora">Hora de la reserva:</label>
+        <select id="hora" name="hora" required>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+        </select>
+
+        <label for="fecha">Fecha de la reserva:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+    <footer>
+      <p>Horario: [Horario]</p>
+      <p>
+        Datos de contacto: <a href="mailto:mail@mail.com">mail@mail.com</a> |
+        Teléfono: 97797 97 97
+      </p>
+      <p>Ubicación del local: [Ubicación]</p>
+      <p>Síguenos en nuestras redes sociales: [Redes sociales]</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222223;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #222223;
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: right;
+  background-color: #222223;
+  padding: 10px;
+}
+nav a {
+  color: #ffffff;
+  margin: auto 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #cba46c;
+}
+.button {
+  background-color: #cba46c;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+.button:hover {
+  background-color: #b8935a;
+}
+
+.content-body {
+  background-image: url("fondo.png");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+footer {
+  background-color: #222223;
+  color: #ffffff;
+  text-align: center;
+}
+footer a {
+  color: #cba46c;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .content-body {
+    margin: 0 auto; /* Centrar el contenedor */
+    width: 70%; /* Puedes ajustar este valor */
+    max-width: 1000px; /* Para que no se expanda demasiado */
+  }
+  footer {
+    margin: 0 auto; /* Centrar el contenedor */
+    width: 70%; /* Puedes ajustar este valor */
+    max-width: 1000px; /* Para que no se expanda demasiado */
+  }
+}
+
+/* Estilo para pantallas móviles */
+@media (max-width: 767px) {
+  .content-body {
+    margin: 0; /* Sin márgenes laterales */
+    width: 100%; /* Ocupa todo el ancho */
+  }
+
+  footer {
+    margin: 0; /* Centrar el contenedor */
+    width: 100%; /* Puedes ajustar este valor */
+  }
+}
