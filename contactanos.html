@@ -5,61 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Delhi Dreams</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .contact-section {
-        padding: 20px;
-        text-align: center;
-      }
-      .contact-section h2 {
-        color: #cba46c;
-      }
-      .contact-info {
-        margin-bottom: 20px;
-      }
-      .contact-info p {
-        margin: 10px 0;
-      }
-      .contact-form {
-        max-width: 400px;
-        margin: 0 auto;
-        text-align: left;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #cba46c;
-        border-radius: 5px;
-        background-color: #333334;
-        color: #ffffff;
-      }
-      .contact-form button {
-        background-color: #cba46c;
-        color: #ffffff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .contact-form button:hover {
-        background-color: #b8935a;
-      }
-      footer {
-        background-color: #222223;
-        color: #ffffff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
-      }
-      footer a {
-        color: #cba46c;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
   </head>
   <body>
     <nav>
@@ -68,7 +13,8 @@
       <a href="#">Contactanos</a>
       <a href="reservas.html" class="button">Reservar ahora</a>
     </nav>
-    <section class="contact-section">
+
+    <section class="content-body">
       <h2>Contactanos</h2>
       <div class="contact-info">
         <p>Teléfono: 97797 97 97</p>
@@ -76,24 +22,29 @@
           Correo electrónico: <a href="mailto:mail@mail.com">mail@mail.com</a>
         </p>
       </div>
+
       <form class="contact-form">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required />
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required />
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-        <label for="comentario">Comentario:</label>
-        <textarea
-          id="comentario"
-          name="comentario"
-          rows="5"
-          required
-        ></textarea>
+        <div class="form-group">
+          <label for="comentario">Comentario:</label>
+          <textarea id="comentario" name="comentario" rows="5" required></textarea>
+        </div>
 
-        <button type="submit">Enviar</button>
+        <div class="form-group">
+          <input type="submit" value="Enviar" />
+        </div>
       </form>
     </section>
+
     <footer>
       <p>Horario: [Horario]</p>
       <p>
