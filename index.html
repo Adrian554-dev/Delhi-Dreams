@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delhi Dreams</title>
     <link rel="stylesheet" href="style.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuIcon = document.querySelector(".menu-icon");
-        const nav = document.querySelector("nav");
-        const navLinks = nav.querySelector("ul");
-
-        menuIcon.addEventListener("click", function () {
-          nav.classList.toggle("menu-active");
-        });
-      });
-    </script>
     <style>
       .hero {
         background-image: url("menu.png"); /* Cambia por la imagen correcta */
@@ -59,15 +48,10 @@
   </head>
   <body>
     <nav>
-      <div class="menu-icon">
-        <img src="bars-solid.svg" alt="Menú" />
-      </div>
-      <ul>
-        <li><a href="#" class="a-selected">Home</a></li>
-        <li><a href="menu.html">Carta</a></li>
-        <li><a href="contactanos.html">Contactanos</a></li>
-        <li><a href="reservas.html" class="button">Reservar ahora</a></li>
-      </ul>
+      <a href="#" class="a-selected">Home</a>
+      <a href="menu.html">Carta</a>
+      <a href="contactanos.html">Contactanos</a>
+      <a href="reservas.html" class="button">Reservar ahora</a>
     </nav>
     <div class="content-body">
       <div class="hero">
