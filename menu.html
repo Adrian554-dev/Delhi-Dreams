@@ -5,138 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="icons/favicon.ico">
     <title>Menú - Delhi Dreams</title>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <style>
-      .menu-section {
-        padding: 20px;
-        text-align: center;
-      }
-      .menu-section h2 {
-        color: #cba46c;
-      }
-      .menu-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #333334;
-        border-radius: 5px;
-      }
-      .menu-item img {
-        width: 100px;
-        height: 100px;
-        border-radius: 5px;
-      }
-      .menu-item p {
-        margin: 0 20px;
-        flex-grow: 1;
-        text-align: left;
-      }
-      .menu-item span {
-        color: #cba46c;
-        font-weight: bold;
-      }
-      footer {
-        background-color: #222223;
-        color: #ffffff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 20px;
-      }
-      footer a {
-        color: #cba46c;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
+      .menu-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* Centra verticalmente */
+            position: relative;
+        }
+
+        .menu-right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center; /* Centra verticalmente */
+            position: relative;
+        }
+
+        .menu-title {
+            padding: 10px 20px;
+            background-color: #cba46c;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #fff;
+            z-index: 2; /* Se superpone al divider */
+        }
+
+        .menu-title > h1{
+          margin: 2vw;
+        }
+
+        .divider {
+            flex-grow: 1;
+            height: 4px;
+            background-color: #cba46c;
+            position: relative;
+            z-index: 1;
+            margin-top: -40px; /* Ajusta la posición sin centrarlo */
+        }
+
+        .menu-image {
+            width: calc(10% + 100px);
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 2px solid #cba46c;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .menu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-list {
+            margin-top: 20px;
+            margin-inline: auto;
+            list-style: none;
+            padding: 0;
+            max-width: 60%;
+            background: rgba(203, 164, 108, 0.2); /* Color con opacidad */
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .menu-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            border-bottom: 1px solid rgba(203, 164, 108, 0.4);
+        }
+        
+
+        .menu-list li:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-right {
+          position: relative;
+          right: 4%;
+        }
+
+        .menu-item-left {
+          position: relative;
+          left: 4%;
+        }
+
+        .menu-list-right {
+          position: relative;
+          left: 10%;
+        }
+
+        .menu-list-left {
+          position: relative;
+          right: 10%;
+        }
     </style>
   </head>
   <body>
-    <nav>
-      <a href="index.html" class="a-selected">Home</a>
-      <a href="#">Carta</a>
-      <a href="contactanos.html">Contactanos</a>
-      <a href="reservas.html" class="button">Reservar ahora</a>
-    </nav>
-    <section class="menu-section">
-      <h2>Desayunos</h2>
-      <div class="menu-item">
-        <img src="desayuno1.jpg" alt="Desayuno 1" />
-        <p>Examp1</p>
-        <span>6,30€</span>
+    <header>
+      <nav id="nav-menu">
+        <a href="index.html" class="a-selected">Home</a>
+        <a href="#">Carta</a>
+        <a href="contactanos.html">Contáctanos</a>
+        <a href="reservas.html" class="button">Reservar ahora</a>
+
+        <!-- Icono de hamburguesa que aparecerá en pantallas pequeñas -->
+        <div id="hamburger-icon" class="hamburger-icon">
+          <img src="icons/bars-solid.svg" alt="Menú"/>
+        </div>
+      </nav>
+    </header>
+    <div class="content-body">
+      <!-- Nuevo objecto 1-->
+      <div>
+        <div class="menu-left">
+          <div class="menu-title menu-item-left"><h1>Desayunos</h1></div>
+          <div class="divider"></div>
+          <div class="menu-image menu-item-right">
+            <img src="photos/desayuno.jpg" alt="Plato">
+          </div>
+        </div>
+  
+        
+        <div class="div-menu-list">
+          <ul class="menu-list menu-list-left">
+            <li><span>Café con leche</span> <span>6,30 €</span></li>
+            <li><span>Tequila con ron bacardi</span> <span>6,30 €</span></li>
+            <li><span>Leche pura con leche impura</span> <span>6,30 €</span></li>
+            <li><span>Ejemplo raro</span> <span>6,30 €</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="menu-item">
-        <img src="desayuno2.jpg" alt="Desayuno 2" />
-        <p>Examp1</p>
-        <span>6,30€</span>
+      <!-- Fin nuevo objecto 1-->
+      <!-- Nuevo objecto 2-->
+      <div>
+        <div class="menu-right">
+          <div class="menu-title menu-item-right"><h1>Example</h1></div>
+          <div class="divider"></div>
+          <div class="menu-image menu-item-left">
+            <img src="photos/no_image.png" alt="Plato">
+          </div>
+        </div>
+  
+        <div class="div-menu-list">
+          <ul class="menu-list menu-list-right">
+            <li><span>Example 1</span> <span>6,30 €</span></li>
+            <li><span>Example 2</span> <span>6,30 €</span></li>
+            <li><span>Example 3</span> <span>6,30 €</span></li>
+            <li><span>Example 4</span> <span>6,30 €</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="menu-item">
-        <img src="desayuno3.jpg" alt="Desayuno 3" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="desayuno4.jpg" alt="Desayuno 4" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-    </section>
-    <section class="menu-section">
-      <h2>Primeros Platos</h2>
-      <div class="menu-item">
-        <img src="primer1.jpg" alt="Primer Plato 1" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="primer2.jpg" alt="Primer Plato 2" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="primer3.jpg" alt="Primer Plato 3" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="primer4.jpg" alt="Primer Plato 4" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-    </section>
-    <section class="menu-section">
-      <h2>Segundos Platos</h2>
-      <div class="menu-item">
-        <img src="segundo1.jpg" alt="Segundo Plato 1" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="segundo2.jpg" alt="Segundo Plato 2" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="segundo3.jpg" alt="Segundo Plato 3" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-      <div class="menu-item">
-        <img src="segundo4.jpg" alt="Segundo Plato 4" />
-        <p>Examp1</p>
-        <span>6,30€</span>
-      </div>
-    </section>
+      <!-- Fin nuevo objecto 2-->
+    </div>
     <footer>
-      <p>Horario: [Horario]</p>
+      <p>Horario: 14:30 - 16:00 | 21:00 - 01:00</p>
       <p>
         Datos de contacto: <a href="mailto:mail@mail.com">mail@mail.com</a> |
-        Teléfono: 97797 97 97
+        Teléfono: 977 97 97 97
       </p>
-      <p>Ubicación del local: [Ubicación]</p>
-      <p>Síguenos en nuestras redes sociales: [Redes sociales]</p>
+      <p>
+        Ubicación del local: Rúa de San Clemente, s/n, 15705 Santiago de
+        Compostela, A Coruña
+      </p>
+      <p>
+        Síguenos en nuestras redes sociales:
+        <a href="https://linktr.ee/delhidreams"
+          >https://linktr.ee/delhidreams</a
+        >
+      </p>
     </footer>
   </body>
 </html>

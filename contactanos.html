@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="icons/favicon.ico">
     <title>Contacto - Delhi Dreams</title>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <a href="index.html" class="a-selected">Home</a>
-      <a href="menu.html">Carta</a>
-      <a href="#">Contactanos</a>
-      <a href="reservas.html" class="button">Reservar ahora</a>
-    </nav>
+    <header>
+      <nav id="nav-menu">
+        <a href="index.html" class="a-selected">Home</a>
+        <a href="menu.html">Carta</a>
+        <a href="#">Contáctanos</a>
+        <a href="reservas.html" class="button">Reservar ahora</a>
+
+        <!-- Icono de hamburguesa que aparecerá en pantallas pequeñas -->
+        <div id="hamburger-icon" class="hamburger-icon">
+          <img src="icons/bars-solid.svg" alt="Menú"/>
+        </div>
+      </nav>
+    </header>
 
     <section class="content-body">
-      <h2>Contactanos</h2>
+      <div>
+        <h2>Contactanos</h2>
       <div class="contact-info">
-        <p>Teléfono: 97797 97 97</p>
+        <p>Teléfono: 977 97 97 97</p>
         <p>
           Correo electrónico: <a href="mailto:mail@mail.com">mail@mail.com</a>
         </p>
       </div>
 
-      <form class="contact-form">
+      <form type="POST" class="contact-form">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required />
@@ -44,16 +53,32 @@
           <input type="submit" value="Enviar" />
         </div>
       </form>
+      </div>
     </section>
 
     <footer>
-      <p>Horario: [Horario]</p>
+      <p>Horario: 14:30 - 16:00 | 21:00 - 01:00</p>
       <p>
         Datos de contacto: <a href="mailto:mail@mail.com">mail@mail.com</a> |
-        Teléfono: 97797 97 97
+        Teléfono: 977 97 97 97
       </p>
-      <p>Ubicación del local: [Ubicación]</p>
-      <p>Síguenos en nuestras redes sociales: [Redes sociales]</p>
+      <p>
+        Ubicación del local: Rúa de San Clemente, s/n, 15705 Santiago de
+        Compostela, A Coruña
+      </p>
+      <p>
+        Síguenos en nuestras redes sociales:
+        <a href="https://linktr.ee/delhidreams"
+          >https://linktr.ee/delhidreams</a
+        >
+      </p>
     </footer>
+
+    <!-- Advise -->
+    <!-- Mensaje reserva realizada -->
+    <div class="toast" id="toast">
+        <h5>Solicitud realizada</h5>
+        <p>Le contactaremos pronto</p>
+    </div>
   </body>
 </html>

@@ -1,12 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Prata&display=swap');
+
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 /* Estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
   background-color: #1e1e1f; /* Fondo oscuro para toda la página */
   color: #ffffff;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  z-index: -100;
+  display: flex;
+  flex-direction: column;
 }
+
+h1, h2 {
+  font-family: 'Prata', serif;
+}
+
+body, p {
+  font-family: 'Hind', sans-serif;
+}
+
 
 a {
   color: #cba46c;
@@ -18,10 +38,13 @@ a:hover {
   color: #b8935a;
 }
 
+img {
+  width: 100%;
+}
+
 /* Estilos para el header */
 header {
   background-color: #222223;
-  padding: 20px;
   text-align: center;
 }
 
@@ -55,20 +78,27 @@ nav a:hover {
 }
 
 .button:hover {
-  background-color: #b8935a;
+  background-color: #f0f0f0;
 }
 
 /* Estilos para el contenido principal */
 .content-body {
+  flex-grow: 1;
+  width: calc(100% - 20px);
   /* background-color: #2d2d2f; Fondo oscuro para el contenido */
-  background-image: url("fondo.png");
+  position: relative;
+  background-image: url("photos/fondo.png");
   background-repeat: repeat-y;
   background-size: 100% auto;
-  padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 1200px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: -20;
+}
+
+.content-body > div{
+  padding: 15px;
 }
 
 /* Estilos para formularios */
@@ -148,7 +178,8 @@ footer {
   color: #ffffff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: max(40vh, auto);
+  margin-bottom: 0;
 }
 
 footer a {
@@ -160,20 +191,135 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Estilos exclusivos de index */
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  overflow: hidden; /* Evita desbordamientos */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10px;  /* Expande la imagen más allá del borde */
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background: url("photos/delhi_index_background.jpeg") no-repeat center center/cover;
+  filter: blur(10px); /* Ajusta la cantidad de desenfoque */
+  z-index: -1; /* Mantiene el fondo detrás del contenido */
+}
+
+.hero div {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+}
+
+.hero div h1 {
+  font-size: 3em;
+  padding: 10px;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 60px; /* Ajusta según la altura de tu barra de navegación */
+  right: 0;
+  background-color: #333;
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  text-align: right;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+.nav-links.show {
+  display: block;
+}
+
+#hamburger-icon {
+  display: none;
+  height: 25px;
+  cursor: pointer;
+  margin-block: auto;
+}
+
+#hamburger-icon > img {
+  height: 100%;
+}
+
+/* Ocultar el campo de entrada, dejando solo el calendario visible */
+
+.form-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-control.input{
+ margin-bottom: 5px;
+}
+
+.form-column {
+  flex: 1;
+}
+
+.reservation-form {
+  max-width: 900px;
+}
+
+.calendar-column {
+  max-width: 350px; /* Limitar el tamaño de la columna del calendario */
+}
+
+.flatpickr-calendar {
+  margin: auto;
+}
+
 /* Estilos responsivos */
 @media (max-width: 767px) {
-  nav {
-    justify-content: center;
-    flex-wrap: wrap;
+
+  .form-container {
+    display: block;
+  }
+
+
+  .calendar-column {
+    max-width: none; /* Limitar el tamaño de la columna del calendario */
   }
 
   nav a {
-    margin: 10px;
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+    cursor: pointer;
   }
 
   .content-body {
     margin: 10px;
-    padding: 15px;
   }
 
   form {
@@ -184,5 +330,35 @@ footer a:hover {
   input[type="submit"] {
     width: 100%;
   }
+
+  .form-column {
+    margin-bottom: 20px;
+  }
+}
+
+/* Toast message css   */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #0c940c;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 10;
+}
+
+.toast > * {
+  margin: 2px;
+}
+
+.toast.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
