@@ -13,13 +13,12 @@ body {
   color: #ffffff;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   z-index: -100;
   display: flex;
   flex-direction: column;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Prata', serif;
 }
 
@@ -46,6 +45,8 @@ img {
 header {
   background-color: #222223;
   text-align: center;
+  position: fixed;
+  width: 100%;
 }
 
 /* Estilos para la navegación */
@@ -90,7 +91,7 @@ nav a:hover {
   background-image: url("photos/fondo.png");
   background-repeat: repeat-y;
   background-size: 100% auto;
-  margin: 20px auto;
+  margin: calc(3% + 50px) auto;
   border-radius: 10px;
   max-width: 1200px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -174,6 +175,7 @@ input[type="submit"]:hover {
 
 /* Estilos para el footer */
 footer {
+  position: relative;
   background-color: #222223;
   color: #ffffff;
   text-align: center;
@@ -297,8 +299,21 @@ footer a:hover {
   margin: auto;
 }
 
+footer > img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  width: 8vw;
+}
+
 /* Estilos responsivos */
 @media (max-width: 767px) {
+
+  footer > img {
+    display: none;
+  }
 
   .form-container {
     display: block;
@@ -309,7 +324,7 @@ footer a:hover {
     max-width: none; /* Limitar el tamaño de la columna del calendario */
   }
 
-  nav a {
+  nav a:not(.web_title) {
     display: none;
   }
 
@@ -320,6 +335,7 @@ footer a:hover {
 
   .content-body {
     margin: 10px;
+    margin-top: 65px;
   }
 
   form {
@@ -333,6 +349,13 @@ footer a:hover {
 
   .form-column {
     margin-bottom: 20px;
+  }
+
+  #title_div a{
+    display: block;
+    text-align: center;
+    width: max-content;
+    margin: 5px auto;
   }
 }
 
@@ -362,3 +385,54 @@ footer a:hover {
   transform: translateY(0);
 }
 
+#btnSubir {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  background: #b8935a;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+#delhi_title {
+  white-space: nowrap;
+}
+
+
+a {
+  white-space: nowrap;
+}
+
+.button {
+  text-align: center !important;
+}
+
+.web_title {
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.web_title *{
+  margin-block: auto;
+  font-size: 23px;
+}
+
+nav > br {
+  flex:1;
+}
+
+.web_title img {
+  height: 26px;
+  width: 30px;
+  margin: 0;
+  margin-right: 10px;
+}
