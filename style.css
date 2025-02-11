@@ -33,6 +33,10 @@ a {
   transition: color 0.3s ease;
 }
 
+i{
+  color: #cba46c;
+}
+
 a:hover {
   color: #b8935a;
 }
@@ -47,6 +51,7 @@ header {
   text-align: center;
   position: fixed;
   width: 100%;
+  padding: 0%;
 }
 
 /* Estilos para la navegación */
@@ -193,6 +198,15 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.map-container {
+  margin: 20px auto;
+  aspect-ratio: 2 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Estilos exclusivos de index */
 
 .hero {
@@ -311,6 +325,12 @@ footer > img {
 /* Estilos responsivos */
 @media (max-width: 767px) {
 
+  .map-container {
+    margin-inline: 0;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
   footer > img {
     display: none;
   }
@@ -424,6 +444,15 @@ a {
 .web_title *{
   margin-block: auto;
   font-size: 23px;
+}
+
+.hamburger-icon {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.hamburger-icon img {
+  aspect-ratio: 1 / 1;
 }
 
 nav > br {

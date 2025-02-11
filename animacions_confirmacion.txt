@@ -1,0 +1,33 @@
+<style>
+        /* Animación de la tarjeta */
+        .card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animación del código QR */
+        #qr-code {
+            opacity: 0;
+            transform: scale(0);
+            animation: zoomIn 1s forwards 0.5s;
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
+Descripción de las animaciones:
+Animación de entrada para la tarjeta: La tarjeta tiene una animación llamada fadeInUp, que la hace desvanecerse y desplazarse hacia arriba.
+Animación del código QR: El código QR tiene una animación llamada zoomIn, que lo hace aparecer con un efecto de aumento (zoom) y desvanecerse al mismo tiempo.

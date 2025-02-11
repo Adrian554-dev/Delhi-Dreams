@@ -1,0 +1,51 @@
+document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const fecha = document.getElementById('fecha').value;
+    const nombreReserva = document.getElementById('nombreReserva').value;
+    const comensales = document.getElementById('comensales').value;
+    const hora = document.getElementById('hora').value;
+
+    const queryParams = new URLSearchParams({
+      fecha: fecha,
+      nombreReserva: nombreReserva,
+      comensales: comensales,
+      hora: hora
+    });
+
+    window.location.href = `confirmacion.html?${queryParams.toString()}`;
+  });
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animación de Zoom con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Animación de zoom */
+        .zoom-effect {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .zoom-effect:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light d-flex justify-content-center align-items-center vh-100">
+
+    <div class="zoom-effect" style="width: 300px; height: 200px; background-color: #6c757d; border-radius: 10px;">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <p class="text-white">Pasa el ratón por aquí para el zoom</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
