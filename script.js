@@ -20,7 +20,7 @@ document.getElementById('hamburger-icon').addEventListener('click', function () 
     }
 });
   
-const form =  document.querySelector('form');
+const form =  document.querySelector('.contact-form');
 
 if(form) {
   form.addEventListener('submit', function (event) {
