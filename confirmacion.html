@@ -28,6 +28,30 @@
         .leaflet-control-attribution {
             display: none !important;
         }
+        .toast {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          background-color: #cba46c;
+          color: white;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          z-index: 10;
+        }
+
+        .toast > * {
+          margin: 2px;
+        }
+
+        .toast.mostrar {
+          display:block;
+          opacity: 1;
+          transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -84,6 +108,12 @@
         </div>
     </div>
 
+    <!-- Advise -->
+    <!-- Mensaje reserva realizada -->
+    <div class="toast" id="toast">
+        <h5>Reserva copiada</h5>
+        <p>URL copiada al portapapeles</p>
+    </div>
 
     <script>
         // Crear el código QR
@@ -113,6 +143,7 @@
 
         document.getElementById("shareBtn").addEventListener("click", async function () {
             const url = window.location.href;
+            const toast = document.getElementById('toast');
             if (navigator.share) {
                 try {
                     await navigator.share({ title: document.title, text: "¡Tu plan está listo!", url: url });
@@ -123,7 +154,8 @@
             } else {
                 try {
                     await navigator.clipboard.writeText(url);
-                    alert("URL copiada al portapapeles.");
+                    toast.classList.add('mostrar');
+                    setTimeout(() => {toast.classList.remove('mostrar');}, 2000);
                 } catch (error) {
                     console.error("Error al copiar:", error);
                 }
@@ -198,9 +230,11 @@
         const horaReserva = urlParams.get('hora');
         const comensalesReserva = urlParams.get('comensales');
 
+        const today = new Intl.DateTimeFormat('fr-CA').format(new Date());
+
         // Mostrar los datos en la página
         document.getElementById("nombreReservaDisplay").textContent = nombreReserva;
-        document.getElementById("fechaReserva").textContent = fechaReserva;
+        document.getElementById("fechaReserva").textContent = fechaReserva || today;
         document.getElementById("horaReserva").textContent = horaReserva;
         document.getElementById("comensalesReserva").textContent = comensalesReserva;
 
