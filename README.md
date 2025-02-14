@@ -8,5 +8,8 @@ Accede a la web mediante los siguientes enlaces:
 - Principal: [Delhi Dreams](https://delhi.lastcrave.shop/)
 - Alternativo (en caso de que el principal no esté disponible): [Emergency](https://emergency.lastcrave.shop/)
 
+## Documento pdf
+Documento de [informe final](https://github.com/Adrian554-dev/Delhi-Dreams/blob/369e59f4a554a77875c81054e4de7238265a8be6/Informe%20-%20Delhi%20Dreams.pdf)
+
 ## Licencia
 Este proyecto no esta protegido bajo ningún tipo de licencia (Como si quereis atribuiroslo)
