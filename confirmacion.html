@@ -13,10 +13,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
-        html,
-        body {
-            height: 100%;
-        }
 
         #mapContainer {
             width: 100%;
@@ -52,18 +48,22 @@
           opacity: 1;
           transform: translateY(0);
         }
+
+        .card {
+            margin-top: 15% !important;
+        }
     </style>
 </head>
 
-<body class="bg-dark text-light d-flex flex-column justify-content-center align-items-center">
+<body class="bg-dark text-light d-flex flex-column justify-content-center align-items-center position-relative">
 
-    <a class="position-absolute top-0 start-0 text-light m-3 text-decoration-none fw-bold"
-        href="https://delhi.lastcrave.shop/reservas.html">
+    <a class="position-absolute top-0 start-0 text-light m-3 text-decoration-none fw-bold" 
+        href="https://delhi.lastcrave.shop/reservas.html" style="z-index: 10;">
         <p><i class="fa-solid fa-arrow-left me-1"></i>VOLVER</p>
     </a>
 
-
-    <div class="card shadow-lg p-4 bg-secondary text-light text-left rounded-4" style="max-width: 400px;">
+    <!-- Aquí añadimos un margin-top mayor en pantallas pequeñas -->
+    <div class="card shadow-lg p-4 bg-secondary text-light text-left rounded-4" style="max-width: 400px; margin-top: 60px;">
 
         <h6 class="fw-semibold text-uppercase text-white-50">RESERVA EN</h6>
         <h4 class="fw-bold">Delhi Dreams - Santiago</h4>
@@ -114,6 +114,16 @@
         <h5>Reserva copiada</h5>
         <p>URL copiada al portapapeles</p>
     </div>
+
+    <footer class="bg-secondary text-light text-center py-3 mt-4">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Delhi Dreams (Web ficticia, leer 
+                <a href="legal.html#aviso-legal" class="text-light text-decoration-none fw-bold">Aviso Legal</a> | 
+                <a href="legal.html#politica-privacidad" class="text-light text-decoration-none fw-bold">Política de Privacidad</a>)
+            </p>
+            <p class="mb-0 text-white-50">Esta web es solo un proyecto académico y no representa un restaurante real.</p>
+        </div>
+    </footer>    
 
     <script>
         // Crear el código QR
