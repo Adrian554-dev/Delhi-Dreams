@@ -18,6 +18,10 @@ body {
   flex-direction: column;
 }
 
+.fixed {
+  position: fixed;
+}
+
 h1, h2, h3 {
   font-family: 'Prata', serif;
 }
@@ -52,6 +56,7 @@ header {
   position: fixed;
   width: 100%;
   padding: 0%;
+  z-index: 100;
 }
 
 /* Estilos para la navegación */
@@ -60,6 +65,8 @@ nav {
   justify-content: flex-end;
   background-color: #222223;
   padding: 10px;
+  z-index: 100;
+  position:relative;
 }
 
 nav a {
@@ -187,6 +194,7 @@ footer {
   padding: 20px;
   margin-top: max(40vh, auto);
   margin-bottom: 0;
+  z-index: 20;
 }
 
 footer a {
@@ -248,7 +256,8 @@ footer a:hover {
 
 .nav-links {
   display: none;
-  position: absolute;
+  position: fixed;
+  z-index:100;
   top: 60px; /* Ajusta según la altura de tu barra de navegación */
   right: 0;
   background-color: #333;
@@ -419,6 +428,7 @@ footer > img {
   justify-content: center;
   cursor: pointer;
   border-radius: 50px;
+  z-index: 99;
 }
 
 #delhi_title {
